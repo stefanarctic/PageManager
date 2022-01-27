@@ -8,11 +8,13 @@ export const getPageProperties = () => {
     let properties = document.location.search;
     properties = properties.replace("?", "");
     const variables = properties.split("&");
-    const arr = [];
+    let obj = {};
     for(const variable of variables) {
-        arr.push(variable.replace("%20", " ").split("="));
+        variable = variable.replace("%20", "");
+        const [property, value] = variable.split("=");
+        obj[property] = value;
     }
-    return arr;
+    return obj;
 }
 
 export const GetSiteRoot = () => {
