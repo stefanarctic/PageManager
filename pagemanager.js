@@ -15,7 +15,7 @@ export const getPageProperties = () => {
     return arr;
 }
 
-export function GetSiteRoot() {
+export const GetSiteRoot = () => {
     let rootPath = window.location.protocol + "//" + window.location.host + "/";
     if (window.location.hostname == "localhost")
     {
